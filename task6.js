@@ -1,14 +1,22 @@
+let input = " ";
+const numbers = [];
 let total = 0;
 
-while (true) {
-  let input = prompt("Введите любое число");
 
-  if (input === null) {
-    break;
+while (input) {
+  input = prompt('Введите любое число!');
+  if(input == null) {
+    alert('Отменено пользователем');
+  } else {
+    input = Number(input);
+
+    if(!isNaN(input)){
+      numbers.push(input);
+      total += input;
+    }
+
   }
-
-  input = Number(input);
-  total += input;
 }
 
-alert(`Общая сумма ${total}`);
+console.log(numbers);
+console.log(`Общая сумма чисел равна ${total}`);
